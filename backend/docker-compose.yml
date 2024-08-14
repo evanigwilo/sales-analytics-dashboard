@@ -1,0 +1,34 @@
+version: "3.8"  # Consider using a more recent version if needed
+
+services:
+  api-server:
+    container_name: api-server
+    build:
+      context: .
+      args:
+        # Set environment variable for the build context
+        NODE_ENV: development
+    volumes:
+      - ./src:/backend/src:ro    # Read-only mount for source code
+      - ./healthchecks:/healthchecks:ro  # Read-only mount for health checks
+    healthcheck:
+      # Command to check the health of the container
+      test: ["CMD", "node", "--input-type=module", "/healthchecks/api/v1/server.js"]
+      # Interval between health checks
+      interval: 10s
+      # Number of retries before marking the container as unhealthy
+      retries: 18
+      # Timeout for the health check command
+      timeout: 5s
+    ports:
+      - "${SERVER_PORT}:${SERVER_PORT}"  # Bind the container port to the host port
+    networks:
+      - back-tier
+    # Hostname resolution for connecting to the host machine
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+
+networks:
+  back-tier:
+    driver: bridge  # Specify the network driver for consistency

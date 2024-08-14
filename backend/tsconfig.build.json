@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.json",
+  //️ exclude test files from compilation, but still have them type checked
+  "exclude": [
+    "**/__tests__/**/*.ts"
+  ]
+}
