@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  web-app-test:
+    container_name: web-app-test
+    build:
+      context: .
+    volumes:
+      - ./src:/frontend/src:ro
+      - ./public:/frontend/public:ro
+    command: [ "yarn", "test", "--watchAll" ]
+    networks:
+      - front-tier
+
+networks:
+  front-tier:

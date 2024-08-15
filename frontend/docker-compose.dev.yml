@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  web-app:
+    container_name: web-app
+    build:
+      context: .
+    volumes:
+      - ./src:/frontend/src:ro
+      - ./public:/frontend/public:ro
+    command: [ "yarn", "dev" ]
+    ports:
+      - ${VITE_APP_PORT}:${VITE_APP_PORT}
+    networks:
+      - front-tier
+    restart: unless-stopped
+
+networks:
+  front-tier:
