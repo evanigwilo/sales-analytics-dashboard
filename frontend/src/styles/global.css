@@ -1,0 +1,69 @@
+@import url("font.css");
+@import url("scrollbar.css");
+@import url("hover.css");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color-scheme: light dark;
+  --bgColor: rgb(18 18 18);
+  --divider-color: rgba(255, 255, 255, 0.12);
+}
+
+body {
+  font-family: "Oxygen", sans-serif;
+  max-width: 2048px;
+  padding: 2rem;
+  text-align: center;
+  margin: auto;
+  background-color: var(--bgColor);
+  /* Mobile styles */
+  @media (max-width: 575px) {
+    padding: 1rem;
+  }
+}
+
+input,
+select {
+  outline: none;
+}
+
+.dim {
+  color: hsl(210deg 15% 70%);
+}
+
+.hide {
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
+}
+
+.full-center {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.sub-content {
+  background-color: #1e1e1e;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  transition: all 0.5s;
+  /* Mobile styles */
+  @media (max-width: 575px) {
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+}

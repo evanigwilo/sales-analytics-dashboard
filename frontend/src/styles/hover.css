@@ -1,0 +1,46 @@
+/* Define CSS variables at the root level or a parent element */
+:root {
+  --duration: 0.05s;
+  --hoverColor: rgb(255 255 255 / 10%);
+  --scale: 1;
+}
+
+/* Base styles */
+.hover {
+  transition: opacity var(--duration) ease-out,
+    transform var(--duration) ease-out,
+    background-color var(--duration) ease-out;
+  cursor: pointer;
+}
+
+/* Hover state */
+.hover:hover {
+  color: white !important;
+  transform: scale(var(--scale)) !important;
+  background-color: var(--hoverColor) !important;
+}
+
+.hover:hover svg {
+  opacity: 1 !important;
+}
+
+/* Active state on hover */
+.hover:hover:active {
+  transform: scale(1) !important;
+}
+
+/* Mobile styles */
+@media (max-width: 575px) {
+  .hover:active {
+    color: white !important;
+  }
+
+  .hover:active svg {
+    opacity: 1 !important;
+  }
+
+  .hover:active {
+    transform: scale(var(--scale)) !important;
+    background-color: var(--hoverColor) !important;
+  }
+}

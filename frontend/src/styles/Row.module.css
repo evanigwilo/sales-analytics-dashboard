@@ -1,0 +1,21 @@
+.container {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr repeat(5, 2fr);
+  place-items: center;
+  border-bottom: 1px solid var(--divider-color);
+  padding: 0px 5px;
+  height: 100%;
+  max-height: 50px;
+  border-top: 1px solid var(--divider-color);
+}
+.container span {
+  font-size: small;
+}
+
+/* Mobile styles */
+@media (max-width: 575px) {
+  .container {
+    grid-template-columns: 1fr repeat(3, 2fr);
+  }
+}

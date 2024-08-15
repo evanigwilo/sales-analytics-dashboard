@@ -1,0 +1,49 @@
+/* 
+    X-Small devices (portrait phones, less than 576px)
+    No media query for 'xs' since this is the default in Bootstrap
+  */
+@media screen and (max-width: 575px) {
+  body {
+    font-size: 0.8em !important;
+  }
+}
+/* 
+    Small devices (landscape phones, 576px and up)
+  */
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  body {
+    font-size: 0.9em !important;
+  }
+}
+/* 
+    Medium devices (tablets, 768px and up)
+  */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  body {
+    font-size: 1em !important;
+  }
+}
+/* 
+    Large devices (desktops, 992px and up)
+  */
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  body {
+    font-size: 1.1em !important;
+  }
+}
+/* 
+    X-Large devices (large desktops, 1200px and up)
+  */
+@media screen and (min-width: 1201px) and (max-width: 1400px) {
+  body {
+    font-size: 1.2em !important;
+  }
+}
+/* 
+    XX-Large devices (larger desktops, 1400px and up)
+  */
+@media screen and (min-width: 1401px) {
+  body {
+    font-size: 1.3em !important;
+  }
+}

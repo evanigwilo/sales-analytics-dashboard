@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  transition: all 0.5s;
+  /* Reset hover color */
+  --hoverColor: "";
+}
+
+.title {
+  cursor: pointer;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.selector {
+  --left: 0;
+  --width: 0.2em;
+  left: var(--left);
+  width: var(--width);
+  transition: all 0.5s;
+  position: relative;
+  margin-top: 0.25em;
+  height: 0;
+  border: none;
+  border-top: 0.2em solid white;
+}
+
+.selection {
+  position: relative;
+}
+
+.selection span:not(:last-child) {
+  margin-right: 2em;
+}
+
+/* Mobile styles */
+@media (max-width: 575px) {
+  .selection span:not(:last-child) {
+    margin-right: 1em;
+  }
+}
+
+.select {
+  display: inline-block;
+  padding: 0.25em 0;
+}
